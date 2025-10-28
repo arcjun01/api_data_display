@@ -44,6 +44,7 @@ function Results()
             <h1>Countries:</h1>
             <p>{error}</p>
             <ul>
+                
                 {data.map((d, index)=> (
                     // <li key={index}>{d.nativeName}</li>
                     <li key={index}>{d.name.common}</li>  
