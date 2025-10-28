@@ -5,5 +5,11 @@ import { useState } from "react"
 import "./App.css"
 
 export default function App() {
-  const [countries, setCountries] = useState([]);
+  return(
+    <>
+      <Header />
+      <Results />
+      <Footer />
+    </>
+  )
 }
