@@ -12,7 +12,8 @@ function Results()
             //try to get data
             try
             {
-                const apiResponse = await fetch("https://restcountries.com/v3.1/independent?status=true&fields=languages,capital");
+                const apiResponse = await fetch("https://restcountries.com/v3.1/all?fields=name,capital,currencies");
+
                 if(!apiResponse.ok) //could not fetch api data
                 {
                     throw new Error("Could not fetch data");
