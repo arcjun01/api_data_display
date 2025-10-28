@@ -12,7 +12,7 @@ function Results()
             //try to get data
             try
             {
-                const apiResponse = await fetch("https://restcountries.com/v3.1/all");
+                const apiResponse = await fetch("https://restcountries.com/v3.1/independent?status=true&fields=languages,capital");
                 if(!apiResponse.ok) //could not fetch api data
                 {
                     throw new Error("Could not fetch data");
@@ -37,4 +37,19 @@ function Results()
         //call fetch
         fetchCountries();
     }, []); //[] == dependencies but there are none so it will only run once
+
+    return(
+        <div>
+            <h1>Countries:</h1>
+            <p>{error}</p>
+            <ul>
+                {data.map((d, index)=> (
+                    <li key={index}>{d.capital}</li>
+                ))}
+            </ul>
+            
+        </div>
+    )
 }
+
+export default Results;
