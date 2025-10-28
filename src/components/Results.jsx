@@ -12,7 +12,7 @@ function Results()
             //try to get data
             try
             {
-                const apiResponse = await fetch("https://restcountries.com/v3.1/all?fields=name,capital,currencies");
+                const apiResponse = await fetch("https://restcountries.com/v3.1/all?fields=capital,name,currencies,nativeName,population,timezones");
 
                 if(!apiResponse.ok) //could not fetch api data
                 {
@@ -45,7 +45,8 @@ function Results()
             <p>{error}</p>
             <ul>
                 {data.map((d, index)=> (
-                    <li key={index}>{d.capital}</li>
+                    // <li key={index}>{d.nativeName}</li>
+                    <li key={index}>{d.name.common}</li>  
                 ))}
             </ul>
             
