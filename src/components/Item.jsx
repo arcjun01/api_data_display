@@ -1,15 +1,22 @@
 import CountryName from "./CountryName"
 import CountryDetails from "./CountryDetails"
 
-export default function Item( {country} ) {
+export default function Item( {countryData} ) {
     return (
-        <div className="country-card">
-            <CountryName name={country.name.common} flag={country.flags?.png} />
-            <CountryDetails
-                region={country.region}
-                capital={country.capital?.[0]}
-                population={country.population}
-            />
+    <>
+      {countryData.map((c, index) => (
+        <div className="country-card" key={index}>
+          <CountryName name={c.name.common} flag={c.flags?.png} />
+
+          <CountryDetails
+            capital={c.capital?.[0]}
+            nativeName={c.name.nativeName}
+            currencies={c.currencies}
+            population={c.population}
+            timeZones={c.timezones}
+          />
         </div>
+      ))}
+    </>
     );
 }

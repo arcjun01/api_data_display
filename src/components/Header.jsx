@@ -2,7 +2,7 @@
 export default function Header(){
     return (
         <header>
-            <h1>API Data Display</h1>
+            <h1>Countries and Properties</h1>
         </header>
     );
 }

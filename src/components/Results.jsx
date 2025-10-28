@@ -1,4 +1,6 @@
 import {useState, useEffect} from "react";
+import Item from "./Item"
+import CountryDetails from "./CountryDetails";
 
 function Results()
 {
@@ -12,7 +14,7 @@ function Results()
             //try to get data
             try
             {
-                const apiResponse = await fetch("https://restcountries.com/v3.1/all?fields=capital,name,currencies,nativeName,population,timezones");
+                const apiResponse = await fetch("https://restcountries.com/v3.1/all?fields=capital,name,currencies,nativeName,population,timezones,flag");
 
                 if(!apiResponse.ok) //could not fetch api data
                 {
@@ -41,15 +43,11 @@ function Results()
 
     return(
         <div>
-            <h1>Countries:</h1>
             <p>{error}</p>
-            <ul>
-                
-                {data.map((d, index)=> (
-                    // <li key={index}>{d.nativeName}</li>
-                    <li key={index}>{d.name.common}</li>  
-                ))}
-            </ul>
+        
+            {/* capital,name,currencies,nativeName,population,timezones,flag" */}
+            <Item CountryData = {data} /> 
+           
             
         </div>
     )
