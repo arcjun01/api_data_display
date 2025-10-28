@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/arcjun01/api-data-display",
+  "homepage": "https://github.com/arcjun01/api_data_display",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
